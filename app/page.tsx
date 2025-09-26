@@ -58,7 +58,7 @@ export default function HomePage() {
       </section>
 
       <footer className="relative z-10 flex items-center justify-between px-6 pb-8 text-xs text-sky-100/70 md:px-12">
-        <span>© {new Date().getFullYear()} Cloud Symphony Studio</span>
+        <span>© {new Date().getFullYear()} Cloud Symphony Studio, Designed by Alan Xue.</span>
         <div className="flex items-center gap-3">
           <Link className="transition hover:text-white" href="https://tailwindcss.com/">
             Tailwind CSS
