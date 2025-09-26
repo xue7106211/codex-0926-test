@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.25), transparent 60%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.15), transparent 55%),
+    linear-gradient(180deg, #0f172a 0%, #1e3a8a 45%, #1d4ed8 100%);
+  color: white;
+}
+
+.cloud-shape {
+  position: relative;
+  width: 20rem;
+  height: 10rem;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 35%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.35)),
+    radial-gradient(circle at 70% 45%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.25));
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+  filter: blur(0.5px);
+}
+
+.cloud-shape::before,
+.cloud-shape::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  background: inherit;
+}
+
+.cloud-shape::before {
+  width: 60%;
+  height: 60%;
+  top: -25%;
+  left: 15%;
+}
+
+.cloud-shape::after {
+  width: 45%;
+  height: 45%;
+  top: -15%;
+  right: 10%;
+}
+
+.cloud {
+  --cloud-duration: 45s;
+  --cloud-scale: 1;
+  position: absolute;
+  left: -20%;
+  opacity: 0.75;
+  will-change: transform;
+}
+
+.cloud[data-variant="haze"] .cloud-shape {
+  filter: blur(6px);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .cloud-shape {
+    width: 14rem;
+    height: 7rem;
+  }
+}
